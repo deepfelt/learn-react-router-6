@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Link, Route, Router, Routes } from 'react-router-dom';
 
 /**
  * Challenge:
@@ -18,8 +19,26 @@ import ReactDOM from 'react-dom/client';
  */
 
 function App() {
+  return(
+    
+    <BrowserRouter>
+    <Link to="/" >Home</Link>
+    <Link to="/about">About</Link>
+    <Routes>
+    <Route path='/' element={<Home/>} />
+    <Route path='/about' element={<About/>} />
+    </Routes>
+    </BrowserRouter>
+  )  
+}
+function Home (){
   return (
     <h1>Start here</h1>
+  )
+}
+function About(){
+  return(
+    <h1>About Us</h1>
   )
 }
 
